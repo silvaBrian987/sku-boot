@@ -60,6 +60,8 @@
 			<groupId>net.bgsystems</groupId>
 			<artifactId>JavaCustomUtils</artifactId>
 			<version>1.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/JavaCustomUtils-1.0.0.jar</systemPath>
 		</dependency>
 	</dependencies>
 
