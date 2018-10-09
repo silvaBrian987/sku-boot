@@ -1,0 +1,83 @@
+<form
+	name="thisForm"
+	class="form"
+	role="form">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel-group">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Buscar empleado</div>
+					<div class="panel-body form-horizontal payment-form">
+						<div class="form-group">
+							<label class="col-md-3 control-label">Tipo de documento</label>
+							<div class="col-md-9">
+								<select
+									class="form-control"
+									ng-model="empleado.documento.tipo"
+									ng-options="option for option in enums.tipoDocumento track by option"
+									required></select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label
+								for="name"
+								class="col-md-3 control-label">Documento</label>
+							<div class="col-md-9">
+								<input
+									name="nroDocumento"
+									type="text"
+									class="form-control"
+									ng-model="empleado.documento.valor"
+									required />
+								<div
+									style="color: red"
+									ng-show="thisForm.nroDocumento.$dirty && thisForm.nroDocumento.$invalid">
+									<div ng-show="thisForm.nroDocumento.$error.required">
+										<span>El documento es requerido</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12 text-right">
+								<button
+									type="button"
+									class="btn btn-primary btn-block"
+									ng-click="buscarPorDocumento()"
+									ng-disabled="thisForm.$invalid">
+									<span class="glyphicon glyphicon-search"></span> Buscar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="panel panel-info"
+					ng-if="empleado.personas && empleado.personas.length > 0">
+					<div class="panel-heading">Empleado</div>
+					<div class="panel-body form-horizontal payment-form">
+						<div
+							class="form-group"
+							ng-if="$parent.empleado.personas.length > 1"
+							ng-init="empleado = $parent.empleado">
+							<label class="col-md-3 control-label">Seleccionar persona</label>
+							<div class="col-md-9">
+								<select
+									class="form-control"
+									ng-model="$parent.persona"
+									ng-options="persona as (persona.nombre + ' ' + persona.apellido) for persona in empleado.personas"></select>
+							</div>
+						</div>
+						<div
+							class="container-fluid"
+							ng-if="persona">
+							<div
+								modificacion-persona-form
+								persona="$parent.persona"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

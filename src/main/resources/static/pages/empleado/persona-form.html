@@ -1,0 +1,82 @@
+<form
+	name="thisForm"
+	class="form"
+	role="form">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel-group">
+				<div class="panel panel-primary">
+					<div class="panel-heading">{{persona.nombre}} {{persona.apellido}}</div>
+					<div class="panel-body form-horizontal payment-form">
+						<div class="form-group">
+							<label
+								for="nombre"
+								class="col-md-3 control-label">Nombre</label>
+							<div class="col-md-9">
+								<input
+									name="nombre"
+									type="text"
+									class="form-control"
+									ng-model="persona.nombre"
+									readonly />
+							</div>
+						</div>
+						<div class="form-group">
+							<label
+								for="apellido"
+								class="col-md-3 control-label">Apellido</label>
+							<div class="col-md-9">
+								<input
+									name="apellido"
+									type="text"
+									class="form-control"
+									ng-model="persona.apellido"
+									readonly />
+							</div>
+						</div>
+						<div class="form-group">
+							<label
+								for="Legajo"
+								class="col-md-3 control-label">Legajo</label>
+							<div class="col-md-9">
+								<input
+									name="legajo"
+									type="text"
+									class="form-control"
+									ng-model="persona.legajo"
+									ng-disabled="!persona.empleado" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label
+								for="empleado"
+								class="col-md-3 control-label">&#191;Es empleado?</label>
+							<div class="col-md-1">
+								<input
+									name="empleado"
+									type="checkbox"
+									class="form-check-input"
+									ng-model="persona.empleado"
+									ng-click="actualizarPersona()" />
+							</div>
+						</div>
+						<div
+							class="form-group"
+							ng-if="persona.empleado">
+							<label
+								for="personalSuperior"
+								class="col-md-3 control-label">&#191;Es empleado superior?</label>
+							<div class="col-md-1">
+								<input
+									name="personalSuperior"
+									type="checkbox"
+									class="form-check-input"
+									ng-model="$parent.persona.empleadoSuperior" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

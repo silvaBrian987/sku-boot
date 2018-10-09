@@ -1,0 +1,60 @@
+<div
+	class="modal-header"
+	data-ng-show="{{title.length}}">
+	<div class="row">
+		<div class="col-md-11">
+			<h4 class="modal-title">{{title}}</h4>
+		</div>
+		<div class="col-md-1">
+			<a
+				class="pull-right"
+				data-ng-click="ok($event)"
+				href=""><span class="glyphicon glyphicon-remove"></span></a>
+		</div>
+	</div>
+</div>
+<div
+	class="modal-body"
+	style="font-size: 18px">
+	<div ng-include="'exceptionTree'"></div>
+</div>
+<div class="modal-footer">
+	<button
+		class="btn btn-primary"
+		data-ng-click="ok($event)">Ok</button>
+</div>
+<script
+	type="text/ng-template"
+	id="exceptionTree">
+	<label>{{exception.message}}</label>
+	
+	<div
+		style="margin-top: 5px;"
+		class="panel panel-info"
+		ng-if="showStacktrace && exception.stackTrace && exception.stackTrace.length > 0">
+		<div
+			class="panel-heading"
+			ng-click="isCollapsed = !isCollapsed" ng-init="isCollapsed = true">Traza</div>
+		<div
+			class="panel-body form-horizontal payment-form"
+			uib-collapse="isCollapsed">
+				<label style="font-size: 10px" ng-repeat="trace in exception.stackTrace">
+					{{trace.className}}{{trace.methodName}}({{trace.fileName}}:{{trace.lineNumber}}
+				</label>
+		</div>
+	</div>
+	<div ng-if="exception.cause">
+		<div
+			class="panel panel-danger"
+			ng-if="exception.stackTrace && exception.stackTrace.length > 0">
+			<div
+				class="panel-heading"
+				ng-click="isCollapsed = !isCollapsed" ng-init="isCollapsed = true">Causa</div>
+			<div
+				class="panel-body form-horizontal payment-form"
+				uib-collapse="isCollapsed">
+					<div ng-include="'exceptionTree'" ng-init="exception = exception.cause"></div>
+			</div>
+		</div>
+    </div>
+</script>

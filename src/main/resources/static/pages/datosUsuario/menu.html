@@ -1,0 +1,19 @@
+<li
+	uib-dropdown
+	is-open="status.isopen"><a
+	href=""
+	uib-dropdown-toggle> <span class="glyphicon glyphicon-user"></span> Usuario: {{usuario.name}} <span class="caret"></span>
+</a>
+	<ul
+		class="dropdown-menu pull-right"
+		uib-dropdown-menu>
+		<li><a href="">Nombre: {{usuario.firstName}}</a></li>
+		<li><a href="">Apellido: {{usuario.lastName}}</a></li>
+		<li><a href="">Puesto: {{usuario.title}}</a></li>
+		<li><a href="">Centro de costo: {{usuario.costCenter}}</a></li>
+		<li><a href="">Centro de trabajo: {{usuario.workCenter}}</a></li>
+		<li ng-if="usuario.manager"><a href="">Jefe: {{usuario.manager.name}}</a></li>
+		<li class="divider"></li>
+		<li class="dropdown-header">Roles</li>
+		<li ng-repeat="rol in usuario.roles"><a href="">{{rol}}</a></li>
+	</ul></li>

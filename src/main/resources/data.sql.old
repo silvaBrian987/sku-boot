@@ -1,0 +1,10 @@
+insert into producto(sku,nombre)
+values('SKU01','PRODUCTO1');
+insert into producto(sku,nombre)
+values('SKU02','PRODUCTO2');
+insert into producto(sku,nombre)
+values('SKU03','PRODUCTO3');
+insert into producto(sku,nombre)
+values('SKU04','PRODUCTO4');
+insert into producto(sku,nombre)
+values('SKU05','PRODUCTO5');

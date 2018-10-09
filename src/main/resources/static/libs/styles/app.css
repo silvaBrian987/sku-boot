@@ -1,0 +1,205 @@
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
+}
+
+.menuTitle1{
+	color: rgba(255, 128, 64, 1);
+}
+
+.mainMenuStyle {
+	position: fixed;
+	overflow: hidden;
+	left: 0;
+	width: 15%;
+	height: 100%;
+	/* 	border-right: 1px solid rgba(139, 0, 0, 1); */
+	/* 	border-radius: 0px; */
+	border-width: 0px;
+}
+
+.mainMenuStyle .panel-primary {
+	height: 100%;
+	border-width: 0px;
+	/* 	border-radius: 0px; */
+	/* background-color: rgba(255, 128, 64, 0.25); */
+	/* background-color: rgba(244, 212, 196, 1); */
+	background-color: transparent;
+}
+
+.mainMenuStyle .panel-primary>ul>li {
+	/* background-color: rgba(225, 225, 225, 0.25); */
+	/* background-color: rgba(244, 212, 196, 1); */
+	background-color: transparent;
+}
+
+.mainMenuStyle .panel-primary>ul>li a {
+	color: black;
+	/* color: white; */
+}
+
+.mainMenuStyle .nav>li>a:hover, .nav>li>a:focus {
+	/* color: black; */
+	background-color: rgba(255, 128, 64, 1);
+	color: black;
+}
+
+.mainMenuStyle .panel-primary>.panel-heading {
+	color: #fff;
+	/* background-color: grey; */
+	/* 	background: radial-gradient(circle, white 9%, rgba(139, 0, 0, 0.5) 94%); */
+	background-color: transparent;
+	/* 	border-bottom: 1px solid rgba(139, 0, 0, 1); */
+	/* 	border-radius: 0px; */
+	border-width: 0px;
+}
+
+.btn.btn-primary {
+	/* border-color: rgba(255, 128, 64, 1); */
+	/* 	border: 1px solid rgba(139, 0, 0, 1); */
+	background-color: rgba(255, 128, 64, 1);
+}
+
+.background {
+	width: 100%;
+	height: 100%;
+	/* background: repeating-linear-gradient(to bottom right, #eee, #fff 10%) !important;*/
+	/* background-color: rgba(125, 125, 125, 0.1); */
+	/* 	background: linear-gradient(135deg,  */
+	/*         rgba(255, 128, 64, 0.75) calc(50% - .125em), #000 0,  */
+	/*         #000 calc(50% + .125em), rgba(255, 128, 64, 0.75) 0); */
+	/*     background-size: 10em 10em; */
+	background: url("../../libs/img/Home-defult-BG.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.cuerpo {
+	position: absolute;
+	overflow: hidden;
+	right: 0;
+	width: 85%;
+	margin: 0;
+	font-family: 'Agilita Medium';
+}
+
+.jumbotron {
+	/* background-color: rgba(225, 225, 225, 1); */
+	border: 1px solid rgba(139, 0, 0, 1);
+	border-radius: 4px;
+	background-color: rgba(255, 128, 64, 0.25);
+}
+
+.title {
+	position: relative;
+	/* background: radial-gradient(circle, white 9%, rgba(255, 128, 64, 1) 94%); */
+	background: radial-gradient(circle, white 9%, rgba(139, 0, 0, 0.5) 94%);
+	/* background-color: gray; */
+	color: #000;
+	font-family: 'Agilita Bold';
+	font-size: 30px;
+	text-align: center;
+	/* height: 40px; */
+	height: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	/* padding-top: 0.2%; */
+	padding: 10px;
+	border: 1px solid rgba(139, 0, 0, 1);
+	border-radius: 4px;
+}
+
+.title .glyphicon-refresh {
+	color: black;
+}
+
+.overlay {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.customMsgbox {
+	position: relative;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	background-color: rgba(255, 255, 255, 1);
+	border: 2px;
+	border-radius: 5px;
+}
+
+.customMsgbox h1 {
+	padding: 30px;
+	/* 	padding: 10%; */
+}
+
+.customMsgbox p {
+	position: relative;
+	font-size: 30px;
+	top: 20%;
+	left: 5%;
+}
+
+.customMsgbox .footer {
+	position: relative;
+	top: 40%;
+	left: 5%;
+}
+
+.grid {
+	width: 100%;
+	height: 100%;
+}
+
+.glyphicon-play {
+	color: black
+}
+
+.glyphicon-chevron-right {
+	color: black
+}
+
+.floatingMenuStyle {
+	position: fixed !important;
+	right: 1%;
+	z-index: 1;
+}
+
+.floatingMenuStyle .btn-primary {
+	color: white;
+	border: 1px solid rgba(139, 0, 0, 1);
+	border-radius: 0px;
+	border-top-width: 0px;
+	background-color: rgba(255, 128, 64, 0.5);
+}
+
+.floatingMenuStyle .btn-primary:hover, .open>.dropdown-toggle.btn-primary {
+	color: white;
+	border: 1px solid rgba(139, 0, 0, 1);
+	border-radius: 0px;
+	border-top-width: 0px;
+	background-color: rgba(255, 128, 64, 1);
+}
+
+.loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+}
+
+.center-in-window {
+	position: relative;
+	top: 50%;
+	left: 50%;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }

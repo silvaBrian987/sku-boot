@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "Agilita Bold";
+    src: url('fonts/agilita/AgilitaCom-Bold.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-Bold.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Agilita Bold Condensed";
+    src: url('fonts/agilita/AgilitaCom-BoldCondensed.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-BoldCondensed.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-BoldCondensed.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-BoldCondensed.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-BoldCondensed.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Agilita Bold Condensed Italic";
+    src: url('fonts/agilita/AgilitaCom-BoldCondensedIt.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-BoldCondensedIt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-BoldCondensedIt.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-BoldCondensedIt.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-BoldCondensedIt.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Agilita Condensed";
+    src: url('fonts/agilita/AgilitaCom-Condensed.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-Condensed.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-Condensed.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-Condensed.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-Condensed.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Agilita Condensed Italic";
+    src: url('fonts/agilita/AgilitaCom-CondensedIt.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-CondensedIt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-CondensedIt.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-CondensedIt.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-CondensedIt.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Agilita Light";
+    src: url('fonts/agilita/AgilitaCom-Light.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-Light.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Agilita Light Italic";
+    src: url('fonts/agilita/AgilitaCom-LightItalic.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-LightItalic.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-LightItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-LightItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Agilita Medium";
+    src: url('fonts/agilita/AgilitaCom-Medium.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-Medium.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-Medium.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: "Agilita Medium Italic";
+    src: url('fonts/agilita/AgilitaCom-MediumItalic.eot'); /* IE9 Compat Modes */
+    src: url('fonts/agilita/AgilitaCom-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/agilita/AgilitaCom-MediumItalic.woff') format('woff'), /* Modern Browsers */
+         url('fonts/agilita/AgilitaCom-MediumItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/agilita/AgilitaCom-MediumItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+}

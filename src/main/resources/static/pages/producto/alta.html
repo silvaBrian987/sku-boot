@@ -1,0 +1,48 @@
+<form name="thisForm" class="form" role="form">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel-group">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Alta de producto</div>
+					<div class="panel-body form-horizontal payment-form">
+						<div class="form-group">
+							<label class="col-md-3 control-label">SKU</label>
+							<div class="col-md-9">
+								<input name="sku" type="text" class="form-control"
+									ng-model="producto.sku" required />
+								<div style="color: red"
+									ng-show="thisForm.sku.$dirty && thisForm.sku.$invalid">
+									<div ng-show="thisForm.sku.$error.required">
+										<span>El sku es requerido</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label">Nombre</label>
+							<div class="col-md-9">
+								<input name="nombre" type="text" class="form-control"
+									ng-model="producto.nombre" required />
+								<div style="color: red"
+									ng-show="thisForm.nombre.$dirty && thisForm.nombre.$invalid">
+									<div ng-show="thisForm.nombre.$error.required">
+										<span>El nombre es requerido</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12 text-right">
+								<button type="button" id="btnAgregar"
+									class="btn btn-primary btn-block" ng-click="save()"
+									ng-disabled="thisForm.$invalid">
+									<span class="glyphicon glyphicon-search"></span> Guardar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

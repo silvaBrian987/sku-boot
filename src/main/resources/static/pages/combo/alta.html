@@ -1,0 +1,105 @@
+
+<form name="thisForm" class="form" role="form">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel-group">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Alta de combo</div>
+					<div class="panel-body form-horizontal payment-form">
+						<div class="form-group">
+							<label class="col-md-3 control-label">Seleccionar producto</label>
+							<div class="col-md-9">
+								<div class="row">
+									<div class="col-md-9" np-autocomplete="npAutocompleteOptions"
+										np-selected-item="productoSeleccionado">
+										<input class="form-control" type="text" />
+									</div>
+									<div class="col-md-2">
+										<input name="productoBaseCantidad" type="number" min="1"
+											class="form-control" ng-model="cantidad"
+											required />
+										<div style="color: red"
+											ng-show="thisForm.productoBaseCantidad.$dirty && thisForm.productoBaseCantidad.$invalid">
+											<div ng-show="thisForm.productoBaseCantidad.$error.required">
+												<span>La cantidad es requerida</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-1">
+										<button type="button" class="btn btn-primary btn-block"
+											ng-click="agregarItemAGrilla()">
+											<span class="glyphicon glyphicon-plus"></span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label">Productos
+								seleccionados</label>
+							<div class="col-md-9">
+								<div ui-grid="gridOptions" ui-grid-edit ui-grid-row-edit
+									ui-grid-cellNav class="grid"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-12 text-right">
+								<button type="button" id="btnAgregar"
+									class="btn btn-primary btn-block" ng-click="save()"
+									ng-disabled="thisForm.$invalid">
+									<span class="glyphicon glyphicon-floppy-disk"></span> Guardar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+<script type="text/ng-template" id="quitarItemButton.tpl.html">
+<div class="ui-grid-cell-contents">
+	<span class="glyphicon glyphicon-floppy-disk" ng-click="grid.appScope.Main.quitarItem(COL_FIELD)"></span>
+</div>
+</script>
+<script type="text/ng-template" id="agregarItemPopup.html">
+<div class="panel panel-primary">
+	<div class="panel-heading">Buscar producto</div>
+	<div class="panel-body form-horizontal payment-form">
+		<div class="form-group">
+			<label class="col-md-3 control-label">Nombre</label>
+			<div class="col-md-9">
+				<input name="productoName" type="text" class="form-control"
+					ng-model="producto" required />
+			</div>
+		</div>
+	</div>
+</div>
+</script>
+<script type="text/ng-template" id="buscarProducto.html">
+<div class="panel panel-primary">
+	<div class="panel-heading">Buscar producto</div>
+	<div class="panel-body form-horizontal payment-form">
+		<div class="form-group">
+			<label class="col-md-3 control-label">Nombre</label>
+			<div class="col-md-9">
+				<input name="productoName" type="text" class="form-control"
+					ng-model="producto" required />
+			</div>
+		</div>
+	</div>
+</div>
+</script>
+<script type="text/ng-template" id="itemTemplate.tpl.html">
+<button type="button" ng-class="getItemClasses($index)" ng-mouseenter="onItemMouseenter($index)" ng-repeat="item in searchResults" ng-click="select(item)">
+	<div class="media">
+		<div class="media-body">
+			<h5 class="media-heading">
+				<strong ng-bind-html="highlight(item.nombre)"></strong>
+			</h5>
+			<span ng-bind-html="highlight(item.sku)"></span>
+		</div>
+	</div>
+</button>
+</script>
