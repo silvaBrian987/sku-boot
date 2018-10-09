@@ -41,6 +41,12 @@
 			</exclusions>
 		</dependency>
 		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
 		<!-- DISCOMMENT THIS TO MAKE IT RUNNABLE WITH SPRING-BOOT:RUN -->
 		<!--
 		<dependency>
