@@ -90,6 +90,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<!-- REMOVE THIS TO MAKE IT RUNNABLE WITH SPRING-BOOT:RUN -->
+			<!--
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -100,6 +101,7 @@
 				    <warName>ROOT</warName>
 				</configuration>
 			</plugin>
+			-->
 		</plugins>
 	</build>
 
