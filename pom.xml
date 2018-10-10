@@ -13,9 +13,6 @@
 	<!-- COMMENT THIS TO MAKE IT A WAR APP -->
 	<packaging>war</packaging>
 
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
-
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
