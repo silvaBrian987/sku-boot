@@ -111,7 +111,7 @@
 			},
 			controller : function($scope) {
 				$scope.npAutocompleteOptions = {
-					url : 'servicios/producto/search',
+					url : './producto/search',
 					delay : 1000,
 					minlength : 1,
 					// dataHolder : 'items',
