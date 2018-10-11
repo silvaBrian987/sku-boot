@@ -28,6 +28,15 @@ public class SessionInterceptor implements HandlerInterceptor {
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 	}
 
+	private void loadUser(HttpServletRequest request) throws Exception {
+		if (!sessionUser.hasData()) {
+			String userName = request.getUserPrincipal().getName();
+
+			sessionUser.setName(userName);
+			sessionUser.setRoles(getRoles(request));
+		}
+	}
+
 	private Set<String> getRoles(HttpServletRequest request) {
 		Set<String> roles = new HashSet<>();
 
@@ -39,14 +48,5 @@ public class SessionInterceptor implements HandlerInterceptor {
 		}
 
 		return roles;
-	}
-
-	private void loadUser(HttpServletRequest request) throws Exception {
-		if (!sessionUser.hasData()) {
-			String legajo = request.getUserPrincipal().getName();
-
-			sessionUser.setName(legajo);
-			sessionUser.setRoles(getRoles(request));
-		}
 	}
 }
