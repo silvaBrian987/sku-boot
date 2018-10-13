@@ -2,8 +2,8 @@ package net.bgsystems.sku.web.controller;
 
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,14 +19,14 @@ import net.bgsystems.sku.business.repository.ProductoRepository;
 @RestController
 @RequestMapping("producto")
 public class ProductoController {
-	private static final Logger LOGGER = LogManager.getLogger(ProductoController.class);
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private ProductoRepository productoRepository;
 	
 	@GetMapping("search")
 	public ResponseEntity<List<Producto>> search(@RequestParam String name) throws Exception {
-		return ResponseEntity.ok(productoRepository.findByNombre(name));
+		return ResponseEntity.ok(productoRepository.findByNombreContaining(name));
 	}
 
 	@GetMapping("findAll")
@@ -36,7 +36,7 @@ public class ProductoController {
 
 	@PostMapping("save")
 	public ResponseEntity<Producto> save(@RequestBody Producto producto) throws Exception {
-		LOGGER.debug(producto);
+		LOGGER.debug("Guardando producto " + producto);
 		productoRepository.save(producto);
 		return ResponseEntity.ok(producto);
 	}

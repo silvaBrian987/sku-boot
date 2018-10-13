@@ -89,6 +89,12 @@
 				};
 
 				vm.save = function() {
+				    vm.combo = {
+				        nombre : 'combo',
+				        itemBase : vm.gridOptions.data.shift(),
+				        items : vm.gridOptions.data
+				    }
+
 					comboService.save(vm.combo).then(function(data) {
 						alert("Se ha grabado correctamente el combo");
 					}, function(error) {
@@ -102,6 +108,18 @@
 							producto : vm.productoSeleccionado,
 							cantidad : vm.cantidad
 					}
+
+					if(comboItem.producto === undefined){
+					    FuncionesError.generarAngularMsgboxSimple($msgbox, "No se a seleccionado un producto");
+					    return;
+					}
+
+
+					if(comboItem.cantidad === undefined || comboItem.cantidad == 0){
+                        FuncionesError.generarAngularMsgboxSimple($msgbox, "Cantidad incorrecta");
+                        return;
+                    }
+
 					vm.gridOptions.data.push(comboItem);
 				}
 				

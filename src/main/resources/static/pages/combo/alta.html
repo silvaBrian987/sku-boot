@@ -46,7 +46,7 @@
 							<div class="col-md-12 text-right">
 								<button type="button" id="btnAgregar"
 									class="btn btn-primary btn-block" ng-click="save()"
-									ng-disabled="thisForm.$invalid">
+									ng-disabled="gridOptions.data.length == 0">
 									<span class="glyphicon glyphicon-floppy-disk"></span> Guardar
 								</button>
 							</div>
@@ -60,7 +60,7 @@
 
 <script type="text/ng-template" id="quitarItemButton.tpl.html">
 <div class="ui-grid-cell-contents">
-	<span class="glyphicon glyphicon-remove" ng-click="grid.appScope.quitarItem(COL_FIELD)"></span>
+	<span class="glyphicon glyphicon-remove" ng-click="grid.appScope.quitarItem(row)"></span>
 </div>
 </script>
 <script type="text/ng-template" id="agregarItemPopup.html">

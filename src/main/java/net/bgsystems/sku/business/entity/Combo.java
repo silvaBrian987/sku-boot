@@ -3,15 +3,7 @@ package net.bgsystems.sku.business.entity;
 import java.io.Serializable;
 import java.util.Set;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -28,9 +20,9 @@ public class Combo implements Serializable {
 	private String sku;
 	@Column
 	private String nombre;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private ComboItem itemBase;
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	private Set<ComboItem> items;
 
 	public Long getId() {

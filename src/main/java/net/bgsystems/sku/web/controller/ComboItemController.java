@@ -3,7 +3,8 @@ package net.bgsystems.sku.web.controller;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ import net.bgsystems.sku.business.repository.ComboItemRepository;
 @RestController
 @RequestMapping("comboItem")
 public class ComboItemController {
-	private static final Logger LOGGER = LogManager.getLogger(ComboItemController.class);
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private ComboItemRepository comboItemRespository;
@@ -29,7 +30,7 @@ public class ComboItemController {
 
 	@RequestMapping("save")
 	public ResponseEntity<ComboItem> save(@RequestBody ComboItem comboItem) throws Exception {
-		LOGGER.debug(comboItem);
+		LOGGER.debug("Guardando comboItem " + comboItem);
 		comboItemRespository.save(comboItem);
 		return ResponseEntity.ok(comboItem);
 	}

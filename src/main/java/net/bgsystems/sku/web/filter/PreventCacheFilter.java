@@ -2,7 +2,6 @@ package net.bgsystems.sku.web.filter;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.logging.Logger;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -14,10 +13,12 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 
 import net.bgsystems.util.HTTPUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @WebFilter("/*")
 public class PreventCacheFilter implements Filter {
-	private static final Logger LOGGER = Logger.getLogger(PreventCacheFilter.class.getName());
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
@@ -32,7 +33,7 @@ public class PreventCacheFilter implements Filter {
 
 			noCacheHeaders.putAll(HTTPUtils.getCORSHeaders());
 			for (String key : noCacheHeaders.keySet()) {
-				resp.setHeader(key, (String) noCacheHeaders.get(key));
+				resp.setHeader(key, noCacheHeaders.get(key));
 			}
 		}
 		chain.doFilter(request, response);

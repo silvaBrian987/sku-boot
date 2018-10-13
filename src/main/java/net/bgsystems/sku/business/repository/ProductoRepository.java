@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import net.bgsystems.sku.business.entity.Producto;
 
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
-	List<Producto> findByNombre(String name);
+	List<Producto> findByNombreContaining(String name);
 }

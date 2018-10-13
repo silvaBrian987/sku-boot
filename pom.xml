@@ -1,112 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>net.bgsystems</groupId>
-	<artifactId>sku-boot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<!-- DISCOMMENT THIS TO MAKE IT STANDALONE -->
-	<!-- <packaging>jar</packaging> -->
-	
-	<!-- COMMENT THIS TO MAKE IT A WAR APP -->
-	<packaging>war</packaging>
+    <groupId>net.bgsystems</groupId>
+    <artifactId>sku-boot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.5.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-	</properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		
-		<!-- DISCOMMENT THIS TO MAKE IT RUNNABLE WITH SPRING-BOOT:RUN -->
-		<!--
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.eclipse.jdt.core.compiler</groupId>
-			<artifactId>ecj</artifactId>
-			<version>4.6.1</version>
-		</dependency>
-		-->
-		
-		<!--
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		-->
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>net.bgsystems</groupId>
-			<artifactId>JavaCustomUtils</artifactId>
-			<version>1.0.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/JavaCustomUtils-1.0.0.jar</systemPath>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
-	<build>
-		<finalName>sku</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<!-- REMOVE THIS TO MAKE IT RUNNABLE WITH SPRING-BOOT:RUN -->
-			<!--
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.3</version>
-				<configuration>
-				    <failOnMissingWebXml>false</failOnMissingWebXml>
-				    <outputDirectory>target</outputDirectory>
-				    <warName>ROOT</warName>
-				</configuration>
-			</plugin>
-			-->
-		</plugins>
-	</build>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.bgsystems</groupId>
+            <artifactId>JavaCustomUtils</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/JavaCustomUtils-1.0.0.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>sku</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- REMOVE THIS TO MAKE IT RUNNABLE WITH SPRING-BOOT:RUN -->
+            <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <outputDirectory>target</outputDirectory>
+                    <warName>ROOT</warName>
+                </configuration>
+            </plugin>
+            -->
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>local-run</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.apache.tomcat.embed</groupId>
+                    <artifactId>tomcat-embed-jasper</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.eclipse.jdt.core.compiler</groupId>
+                    <artifactId>ecj</artifactId>
+                    <version>4.6.1</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                    <scope>runtime</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 
 </project>
