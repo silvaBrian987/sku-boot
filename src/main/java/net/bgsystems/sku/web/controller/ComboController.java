@@ -1,19 +1,14 @@
 package net.bgsystems.sku.web.controller;
 
-import java.util.List;
-
-import org.apache.logging.log4j.LogManager;
+import net.bgsystems.sku.business.entity.Combo;
+import net.bgsystems.sku.business.repository.ComboRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import net.bgsystems.sku.business.entity.Combo;
-import net.bgsystems.sku.business.repository.ComboRepository;
+import java.util.List;
 
 @RestController
 @RequestMapping("combo")
@@ -23,12 +18,12 @@ public class ComboController {
 	@Autowired
 	private ComboRepository comboRepository;
 
-	@RequestMapping(path = "findAll", method = RequestMethod.GET)
+    @GetMapping("findAll")
 	public ResponseEntity<List<Combo>> findAll() throws Exception {
 		return ResponseEntity.ok(comboRepository.findAll());
 	}
 
-	@RequestMapping("save")
+    @PostMapping("save")
 	public ResponseEntity<Combo> save(@RequestBody Combo combo) throws Exception {
 		LOGGER.debug("Guardando combo " + combo);
 		comboRepository.save(combo);

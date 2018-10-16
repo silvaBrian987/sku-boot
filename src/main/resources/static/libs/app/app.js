@@ -62,6 +62,11 @@ var dependencies = [];
 		// Mejora en la transformacion de la respuesta http
 		$http.defaults.transformResponse.unshift(FuncionesGenerales.customTransformResponse);
 
+        // Seteo los tokens para la seguridad contra CSRF
+        var header = angular.element('meta[name=\'_csrf_header\']').get(0).content;
+        var token = angular.element('meta[name=\'_csrf\']').get(0).content;
+        $http.defaults.headers.post[header] = token;
+
 		// Datos del usuario
 		$rootScope.usuario = {};
 		appService.obtenerUsuarioActual().then(function(usuario) {
