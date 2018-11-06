@@ -94,10 +94,10 @@
                 };
 
                 vm.save = function () {
-                    vm.combo = {
-                        itemBase: vm.gridOptions.data.shift(),
-                        items: vm.gridOptions.data
-                    }
+                    if(!vm.combo) vm.combo = {};
+
+                    vm.combo.itemBase = vm.gridOptions.data.shift();
+                    vm.combo.items = vm.gridOptions.data;
 
                     vm.gridOptions.data = [];
 
